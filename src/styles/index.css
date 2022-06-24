@@ -9,10 +9,17 @@ body {
     linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
-:root {
+:root,
+html {
   --color-yellow: #ffbe0b;
   --color-orange: #fb5607;
   --color-pink: #ff006e;
   --color-purple: #8338ec;
   --color-blue: #3a86ff;
+
+  /* endpoints */
+  --mobile-breakpoint: 768px;
+  --tablet-breakpoint: 1024px;
+  --desktop-breakpoint: 1440px;
+  --large-desktop-breakpoint: 1920px;
 }

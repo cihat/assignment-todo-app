@@ -15,9 +15,12 @@ const TodoListContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e6e6e6;
-  max-width: 75%;
-  width: 100%;
   min-height: 100%;
+  max-width: 85%;
+
+  @media (min-width: 768px) {
+    max-width: 75%;
+  }
 `;
 
 const TodoContainer = () => {
