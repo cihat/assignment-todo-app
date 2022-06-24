@@ -1,12 +1,29 @@
 import TodoList from "../../components/TodoList";
 import React from "react";
-import styles from "./TodoContainer.module.css";
+import styled from "styled-components";
 
 const TodoContainer = () => {
+  const TodoListContainer = styled.div`
+    grid-area: main;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 0;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+    max-width: 75%;
+    width: 100%;
+  `;
+
   return (
-    <div className={styles.todo_container}>
+    <TodoListContainer>
       <TodoList />
-    </div>
+    </TodoListContainer>
   );
 };
 
