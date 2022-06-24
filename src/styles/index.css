@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,800&display=swap");
+
 @import url("./reset.css");
 
 body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   background: center / contain no-repeat
     linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+:root {
+  --color-yellow: #ffbe0b;
+  --color-orange: #fb5607;
+  --color-pink: #ff006e;
+  --color-purple: #8338ec;
+  --color-blue: #3a86ff;
 }
