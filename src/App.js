@@ -1,4 +1,4 @@
-import TodoContainer from "./containers/Todo";
+import TodoContainer from "./components/TodoWrapper";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./styles/index.css";
