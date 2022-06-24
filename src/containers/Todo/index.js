@@ -1,6 +1,8 @@
 import TodoList from "../../components/TodoList";
 import React from "react";
 import styled from "styled-components";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 const TodoListContainer = styled.div`
   grid-area: main;
@@ -8,7 +10,7 @@ const TodoListContainer = styled.div`
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1rem;
   margin-bottom: 0;
   background-color: #fafafa;
@@ -26,6 +28,8 @@ const TodoListContainer = styled.div`
 const TodoContainer = () => {
   return (
     <TodoListContainer>
+      <Input />
+      <Button />
       <TodoList />
     </TodoListContainer>
   );
