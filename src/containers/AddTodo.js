@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../stores/actions";
 import styled from "styled-components";
+import { RiAddBoxLine } from "react-icons/ri";
 
 const AddTodoStyle = styled.div`
   display: flex;
@@ -35,14 +36,21 @@ const AddTodoStyle = styled.div`
       padding: 0.5rem;
       border: 1px solid #e6e6e6;
       border-radius: 10px;
-      transition: 500ms ease-in-out;
+      transition: 200ms ease-in-out;
       cursor: pointer;
       font-size: 1.2rem;
-      background-color: var(--color-yellow);
+      background-color: var(--color-green);
       color: var(--color-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        margin-right: 10px;
+      }
 
       &:disabled {
-        background-color: var(--color-pink);
+        background-color: var(--color-red);
         color: white;
         cursor: not-allowed;
       }
@@ -70,6 +78,7 @@ const AddTodo = ({ dispatch }) => {
           value={todoInput}
         />
         <button type="submit" disabled={!todoInput}>
+          <RiAddBoxLine size={"20px"} />
           Add Todo
         </button>
       </form>
