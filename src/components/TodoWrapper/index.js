@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import AddTodo from "../../containers/AddTodo";
 import VisibleTodoList from "../../containers/VisibleTodoList";
-import Button from "../Button";
+import FooterLinkFilter from "../FooterLinkFilter";
 
 const TodoListContainer = styled.div`
   grid-area: main;
@@ -53,12 +53,12 @@ const TodoContainer = () => {
     <TodoListContainer>
       <TodoListWrapper>
         <AddTodo />
-        <br />
         <Hr />
         <ListWrapper>
           <VisibleTodoList />
         </ListWrapper>
       </TodoListWrapper>
+      <FooterLinkFilter />
     </TodoListContainer>
   );
 };
