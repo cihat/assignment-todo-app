@@ -13,9 +13,13 @@ body {
 html {
   --color-yellow: #ffbe0b;
   --color-orange: #fb5607;
-  --color-pink: #ff006e;
+  --color-pink: #ff0000;
+  --color-red: #ff0000;
   --color-purple: #8338ec;
   --color-blue: #3a86ff;
+  --color-green: #89ed67c7;
+  --color-black: #000;
+  --color-white: #fff;
 
   /* endpoints */
   --mobile-breakpoint: 768px;
