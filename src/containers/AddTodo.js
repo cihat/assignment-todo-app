@@ -14,8 +14,40 @@ const AddTodoStyle = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e6e6e6;
-  min-height: 100%;
-  max-width: 85%;
+  background-color: var(--color-blue);
+
+  form {
+    width: 100%;
+    display: flex;
+
+    input {
+      width: 75%;
+      padding: 0.5rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      margin-right: 0.5rem;
+      height: 20px;
+      font-size: 1.2rem;
+    }
+
+    button {
+      width: 25%;
+      padding: 0.5rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      transition: 500ms ease-in-out;
+      cursor: pointer;
+      font-size: 1.2rem;
+      background-color: var(--color-yellow);
+      color: var(--color-orange);
+
+      &:disabled {
+        background-color: var(--color-pink);
+        color: white;
+        cursor: not-allowed;
+      }
+    }
+  }
 `;
 
 const AddTodo = ({ dispatch }) => {
@@ -32,8 +64,14 @@ const AddTodo = ({ dispatch }) => {
   return (
     <AddTodoStyle>
       <form onSubmit={handleSubmitTodo}>
-        <input onChange={(event) => setTodoInput(event.target.value)} />
-        <button type="submit">Add Todo</button>
+        <input
+          onChange={(event) => setTodoInput(event.target.value)}
+          placeholder="Add a todo"
+          value={todoInput}
+        />
+        <button type="submit" disabled={!todoInput}>
+          Add Todo
+        </button>
       </form>
     </AddTodoStyle>
   );

@@ -7,17 +7,18 @@ const TodoItemContainer = styled.div`
 `;
 
 const TodoItemStyle = styled.li`
-  list-style: square;
+  list-style: decimal;
   padding: 1rem;
   margin-bottom: 0;
   background-color: #fafafa;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e6e6e6;
-  min-height: 100%;
-  max-width: 85%;
-  cursor: pointer;
+  margin-bottom: 1rem;
+  flex: 0 0 auto;
+
   &:hover {
+    cursor: pointer;
     background-color: #e6e6e6;
   }
 `;
@@ -30,9 +31,9 @@ const TodoItem = (props) => {
       <TodoItemStyle
         key={key}
         onClick={onClick}
-        style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+        style={{ textDecoration: todo?.completed ? "line-through" : "none" }}
       >
-        <span>{todo.text}</span>
+        <span>{todo?.text}</span>
       </TodoItemStyle>
     </TodoItemContainer>
   );
