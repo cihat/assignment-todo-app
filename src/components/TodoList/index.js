@@ -1,12 +1,15 @@
 import React from "react";
 import TodoItem from "../TodoItem";
 
-const TodoList = ({ todos, toggleTodo }) => {
-  console.log(todos);
+const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <ul style={{ display: "flex", flexDirection: "column-reverse" }}>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} onClick={toggleTodo} />
+        <TodoItem
+          todo={todo}
+          addTodo={() => toggleTodo(todo.id)}
+          deleteTodo={() => deleteTodo(todo.id)}
+        />
       ))}
     </ul>
   );
