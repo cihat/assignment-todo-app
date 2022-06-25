@@ -69,8 +69,6 @@ const ResponsiveAppBar = () => {
     if (!user) navigate("/");
   }, [user, loading]);
 
-  console.log("user", user);
-
   return (
     <AppBar
       position="static"
