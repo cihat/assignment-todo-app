@@ -15,9 +15,9 @@ const FooterStyle = styled.footer`
 
   p {
     text-align: center;
-    color: var(--color-pink);
+    color: var(--color-white);
     a {
-      color: var(--color-yellow);
+      color: var(--color-white);
     }
   }
 `;
