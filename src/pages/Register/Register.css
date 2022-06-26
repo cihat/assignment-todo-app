@@ -9,8 +9,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #dcdcdc;
+  justify-content: space-between;
+  background-color: #ffffff;
   padding: 30px;
+  height: 500px;
+  width: 400px;
+  margin: 1rem;
 }
 .register__textBox {
   padding: 10px;
@@ -23,10 +27,10 @@
   margin-bottom: 10px;
   border: none;
   color: white;
-  background-color: black;
+  background-color: black !important;
 }
 .register__google {
-  background-color: #4285f4;
+  background-color: #4285f4 !important;
 }
 .register div {
   margin-top: 7px;

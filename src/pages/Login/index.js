@@ -7,6 +7,7 @@ import {
 } from "../../firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
+import { TextField, Button, Typography } from "@mui/material";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -15,42 +16,50 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
-    }
     if (user) navigate("/dashboard");
   }, [user, loading]);
 
   return (
     <div className="login">
       <div className="login__container">
-        <input
+        <Typography variant="h2">Login</Typography>
+        <TextField
+          fullWidth
+          label="E-mail Address"
           type="text"
+          variant="filled"
           className="login__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
+        <TextField
+          fullWidth
+          label="Password"
           type="password"
           className="login__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button
+        <Button
+          variant="contained"
           className="login__btn"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
-        </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
+        </Button>
+        <Button
+          variant="contained"
+          className="login__btn login__google"
+          onClick={signInWithGoogle}
+        >
           Login with Google
-        </button>
+        </Button>
         <div>
           <Link to="/reset">Forgot Password</Link>
         </div>
+        <br />
         <div>
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>

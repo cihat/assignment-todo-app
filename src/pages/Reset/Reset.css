@@ -8,9 +8,13 @@
 .reset__container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  background-color: #dcdcdc;
+  background-color: #ffffff;
   padding: 30px;
+  height: 400px;
+  width: 400px;
+  margin: 1rem;
 }
 .reset__textBox {
   padding: 10px;

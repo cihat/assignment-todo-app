@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { auth, sendPasswordReset } from "../../firebase/auth";
+import { TextField, Button, Typography } from "@mui/material";
 import "./Reset.css";
 
 function Reset() {
@@ -18,7 +19,10 @@ function Reset() {
   return (
     <div className="reset">
       <div className="reset__container">
-        <input
+        <Typography variant="h2">Reset Password</Typography>
+        <TextField
+          fullWidth
+          label="E-mail Address"
           type="text"
           className="reset__textBox"
           value={email}

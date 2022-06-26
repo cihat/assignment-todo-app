@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addTodo } from "../stores/actions";
 import styled from "styled-components";
 import { RiAddBoxLine } from "react-icons/ri";
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
 
 const AddTodoStyle = styled.div`
   display: flex;
@@ -67,10 +67,6 @@ const AddTodo = ({ dispatch }) => {
           placeholder="Add a todo"
           value={todoInput}
         />
-        {/* <button type="submit" disabled={!todoInput}>
-          Add Todo
-        </button> */}
-
         <Button
           variant={!todoInput ? "outlined" : "contained"}
           color={!todoInput ? "error" : "success"}

@@ -6,6 +6,7 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "../../firebase/auth";
+import { TextField, Button, Typography } from "@mui/material";
 import "./Register.css";
 
 function Register() {
@@ -28,36 +29,49 @@ function Register() {
   return (
     <div className="register">
       <div className="register__container">
-        <input
+        <Typography variant="h2">Register</Typography>
+        <TextField
+          fullWidth
+          label="Full Name"
           type="text"
           className="register__textBox"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
         />
-        <input
+        <TextField
+          fullWidth
+          label="E-mail Address"
           type="text"
-          className="register__textBox"
+          variant="filled"
+          className="login__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
+        <TextField
+          fullWidth
+          label="Password"
           type="password"
-          className="register__textBox"
+          className="login__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button className="register__btn" onClick={register}>
+        <Button
+          variant="contained"
+          className="register__btn"
+          onClick={register}
+        >
           Register
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="contained"
           className="register__btn register__google"
           onClick={signInWithGoogle}
         >
           Register with Google
-        </button>
+        </Button>
         <div>
           Already have an account? <Link to="/">Login</Link> now.
         </div>
