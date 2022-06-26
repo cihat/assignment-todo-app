@@ -30,7 +30,7 @@ const todos = (state = initialState.todos, action) => {
           return todo;
         }
       });
-    case TodoTypes.UPDATE_TODO:
+    case TodoTypes.DELETE_TODO:
       return state.filter((todo) => todo.id !== action.id);
 
     default:
