@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AddTodo from "../../containers/AddTodo";
 import VisibleTodoList from "../../containers/VisibleTodoList";
 import FooterLinkFilter from "../FooterLinkFilter";
+import { Transition } from "react-transition-group";
 
 const TodoListContainer = styled.div`
   grid-area: main;
@@ -35,6 +36,7 @@ const ListWrapper = styled.div`
   max-height: 700px;
   overflow-y: scroll;
   min-width: 100%;
+  transition: max-height 0.5s ease-out;
 
   @media (min-width: 768px) {
     max-width: 75%;

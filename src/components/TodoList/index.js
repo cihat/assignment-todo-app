@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import TodoItem from "../TodoItem";
 import styled from "styled-components";
+import { TransitionGroup, Transition } from "react-transition-group";
+import Collapse from "@mui/material/Collapse";
 
 const ListWrapper = styled.div`
   margin-top: 1rem;
@@ -20,25 +22,37 @@ const ListWrapper = styled.div`
   }
 `;
 
+const Ul = styled.ul`
+  transition: all 0.5s ease-out;
+`;
+
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
-    <>
+    <Transition timeout={500}>
       {todos.length > 0 ? (
-        <ul style={{ display: "flex", flexDirection: "column-reverse" }}>
-          {todos.map((todo) => (
-            <TodoItem
-              todo={todo}
-              addTodo={() => toggleTodo(todo.id)}
-              deleteTodo={() => deleteTodo(todo.id)}
-            />
-          ))}
-        </ul>
+        <Ul>
+          <TransitionGroup
+            style={{ display: "flex", flexDirection: "column-reverse" }}
+          >
+            {todos.map((todo, index) => (
+              <Collapse key={index}>
+                <TodoItem
+                  todo={todo}
+                  addTodo={() => toggleTodo(todo.id)}
+                  deleteTodo={() => deleteTodo(todo.id)}
+                />
+              </Collapse>
+            ))}
+          </TransitionGroup>
+        </Ul>
       ) : (
-        <ListWrapper>
-          <p>No todos yet!</p>
-        </ListWrapper>
+        <TransitionGroup timeout={500}>
+          <ListWrapper>
+            <p>No todos yet!</p>
+          </ListWrapper>
+        </TransitionGroup>
       )}
-    </>
+    </Transition>
   );
 };
 
