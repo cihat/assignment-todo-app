@@ -8,6 +8,7 @@ const FooterStyle = styled.footer`
   max-height: 50px;
   margin-top: auto;
   padding: 20px;
+  background-color: var(--color-purple);
 
   @media (min-width: 768px) {
     margin-top: 12px;
