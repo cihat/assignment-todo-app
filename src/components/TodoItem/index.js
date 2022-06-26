@@ -18,7 +18,7 @@ const TodoItemStyle = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   background-color: ${(props) => (props.completed ? "#c4cdc9" : "#fefefe")};
-  /* flex: 2 2; */
+  transition: 250ms all ease-out;
 
   &:hover {
     cursor: pointer;
@@ -48,13 +48,6 @@ const TextWrapper = styled.span`
   border-right: 1px solid #ffe6e6;
   overflow-x: scroll;
   max-width: 100%;
-  /* can't select text */
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
 
   flex-basis: 90%;
 `;
@@ -69,6 +62,7 @@ const TodoItem = (props) => {
           onClick={addTodo}
           style={{ textDecoration: todo?.completed ? "line-through" : "none" }}
           completed={todo?.completed}
+          className="not_select"
         >
           {todo?.text}
         </TextWrapper>

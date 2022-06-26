@@ -26,7 +26,7 @@ const FooterStyle = styled.footer`
 const Footer = () => {
   return (
     <FooterStyle>
-      <p>
+      <p className="not_select">
         Created by&nbsp;
         <a href="https://github.com/cihat/assignment-todo-app">
           <span role="img" aria-label="linkedin">

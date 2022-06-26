@@ -42,7 +42,8 @@ const AddTodoStyle = styled.div`
       &:disabled {
         cursor: not-allowed;
         border: 1px solid red;
-        color: red;
+        color: white;
+        background-color: var(--color-red);
       }
     }
   }
@@ -75,7 +76,7 @@ const AddTodo = ({ dispatch }) => {
           style={{ cursor: !todoInput ? "not-allowed" : "pointer" }}
         >
           <RiAddBoxLine size={"20px"} />
-          Add Todo
+          {todoInput ? "Add" : "Add a todo"}
         </Button>
       </form>
     </AddTodoStyle>
