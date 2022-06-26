@@ -16,8 +16,6 @@ import MenuItem from "@mui/material/MenuItem";
 import styled from "styled-components";
 import { logOut, auth } from "../../firebase/auth";
 
-// const pages = ["Products", "Pricing", "Blog"];
-
 const Title = styled.h1`
   font-weight: bold;
   text-align: center;
@@ -26,7 +24,6 @@ const Title = styled.h1`
   font-size: 36px;
   -webkit-text-stroke: 2px white;
   -webkit-background-clip: text;
-  /* -webkit-text-fill-color: transparent; */
 `;
 
 const ResponsiveAppBar = () => {
@@ -93,44 +90,6 @@ const ResponsiveAppBar = () => {
           >
             <Title>Todo App</Title>
           </Typography>
-
-          {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
-
           <Typography
             variant="h5"
             noWrap
@@ -149,18 +108,6 @@ const ResponsiveAppBar = () => {
           >
             <Title>Todo App</Title>
           </Typography>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box> */}
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
