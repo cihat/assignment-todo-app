@@ -70,19 +70,6 @@ const sendPasswordReset = async (email) => {
   }
 };
 
-const getUserData = () => {
-  let _user = {};
-  getAuth().onAuthStateChanged(async (user) => {
-    if (!user) return null;
-
-    Object.assign(_user, user);
-  });
-
-  console.log('asjfl;sdakf: ', _user);
-
-  return _user;
-};
-
 const logOut = async () => {
   signOut(auth);
 };
@@ -93,6 +80,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordReset,
   logOut,
-  getUserData,
   auth,
 };
