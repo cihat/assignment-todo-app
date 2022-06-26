@@ -5,8 +5,8 @@ import Login from "./pages/Login";
 
 const routes = [
   {
-    path: "/dashboard",
-    element: <Home />,
+    path: "/",
+    element: <Login />,
     exact: true,
   },
   {
@@ -20,8 +20,8 @@ const routes = [
     exact: true,
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: "/dashboard",
+    element: <Home />,
     exact: true,
   },
   {
