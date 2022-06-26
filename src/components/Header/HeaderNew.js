@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import styled from "styled-components";
-import { logOut, auth } from "../../firebase";
+import { logOut, auth } from "../../firebase/auth";
 
 // const pages = ["Products", "Pricing", "Blog"];
 
