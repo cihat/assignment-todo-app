@@ -1,11 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { dummyTodos } from "../../dummy/todos";
 import { loadLocalStorage } from "../../utils/localStorage";
-
-const ADD_TODO = "ADD_TODO";
-const TOGGLE_TODO = "TOGGLE_TODO";
-const UPDATE_TODO = "UPDATE_TODO";
-const DELETE_TODO = "DELETE_TODO";
+import { TodosActionTypes as TodoTypes } from "../actions/types";
 
 const initialState = {
   todos: loadLocalStorage("todos"),
@@ -14,7 +9,7 @@ const initialState = {
 
 const todos = (state = initialState.todos, action) => {
   switch (action.type) {
-    case ADD_TODO:
+    case TodoTypes.ADD_TODO:
       return [
         ...state,
         {
@@ -23,11 +18,11 @@ const todos = (state = initialState.todos, action) => {
           completed: false,
         },
       ];
-    case TOGGLE_TODO:
+    case TodoTypes.TOGGLE_TODO:
       return state.map((todo) =>
         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       );
-    case UPDATE_TODO:
+    case TodoTypes.UPDATE_TODO:
       return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, text: action.text };
@@ -35,7 +30,7 @@ const todos = (state = initialState.todos, action) => {
           return todo;
         }
       });
-    case DELETE_TODO:
+    case TodoTypes.UPDATE_TODO:
       return state.filter((todo) => todo.id !== action.id);
 
     default:

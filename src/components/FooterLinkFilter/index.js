@@ -1,6 +1,6 @@
 import React from "react";
 import FilterLink from "../../containers/FilterLink";
-import { VisibilityFilters } from "../../stores/actions/visibilityFilter";
+import { FiltersActionTypes as FilterTypes } from "../../stores/actions/types";
 import styled from "styled-components";
 
 const FooterLinkFilterWrapperStyle = styled.div`
@@ -19,11 +19,9 @@ const FooterLinkFilterWrapper = () => {
   return (
     <FooterLinkFilterWrapperStyle>
       <span>Show: </span>&nbsp;&nbsp;
-      <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
-      <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>Active</FilterLink>
-      <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
-        Completed
-      </FilterLink>
+      <FilterLink filter={FilterTypes.SHOW_ALL}>All</FilterLink>
+      <FilterLink filter={FilterTypes.SHOW_ACTIVE}>Active</FilterLink>
+      <FilterLink filter={FilterTypes.SHOW_COMPLETED}>Completed</FilterLink>
     </FooterLinkFilterWrapperStyle>
   );
 };

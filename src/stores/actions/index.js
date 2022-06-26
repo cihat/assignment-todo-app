@@ -19,6 +19,7 @@ const toggleTodo = (id) => ({
 const updateTodo = (id, text) => ({
   type: "UPDATE_TODO",
   id,
+  text,
 });
 
 const deleteTodo = (id) => ({
