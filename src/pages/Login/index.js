@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 import {
   auth,
   logInWithEmailAndPassword,
@@ -54,7 +55,8 @@ function Login() {
           className="login__btn login__google"
           onClick={signInWithGoogle}
         >
-          Login with Google
+          <FcGoogle size="20px" />
+          &nbsp; Login with Google
         </Button>
         <div>
           <Link to="/reset">Forgot Password</Link>
