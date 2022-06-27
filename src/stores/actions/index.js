@@ -16,7 +16,7 @@ const toggleTodo = (id) => ({
   id,
 });
 
-const updateTodo = (id, text) => ({
+const updateTodo = ({ id, text }) => ({
   type: "UPDATE_TODO",
   id,
   text,
