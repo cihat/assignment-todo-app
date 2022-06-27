@@ -26,7 +26,7 @@ const Ul = styled.ul`
   transition: all 0.5s ease-out;
 `;
 
-const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
+const TodoList = ({ todos, toggleTodo, deleteTodo, updateTodo }) => {
   return (
     <Transition timeout={500}>
       {todos.length > 0 ? (
@@ -40,6 +40,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
                   todo={todo}
                   addTodo={() => toggleTodo(todo.id)}
                   deleteTodo={() => deleteTodo(todo.id)}
+                  updateTodo={updateTodo}
                 />
               </Collapse>
             ))}

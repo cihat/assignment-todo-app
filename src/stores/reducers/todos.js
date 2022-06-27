@@ -24,11 +24,7 @@ const todos = (state = initialState.todos, action) => {
       );
     case TodoTypes.UPDATE_TODO:
       return state.map((todo) => {
-        if (todo.id === action.id) {
-          return { ...todo, text: action.text };
-        } else {
-          return todo;
-        }
+        return todo.id === action.id ? { ...todo, text: action.text } : todo;
       });
     case TodoTypes.DELETE_TODO:
       return state.filter((todo) => todo.id !== action.id);
