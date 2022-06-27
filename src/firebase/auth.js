@@ -28,7 +28,7 @@ const signInWithGoogle = async () => {
       });
     }
   } catch (err) {
-    console.err(err);
+    console.error(err);
     alert(err.message);
   }
 };
