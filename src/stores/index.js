@@ -7,7 +7,7 @@ const store = createStore(rootReducer, loadLocalStorage("todos"));
 
 store.subscribe(async () => {
   saveLocalStorage("todos", store.getState().todos);
-  await saveTodosInFirebase(store.getState().todos);
+  // await saveTodosInFirebase(store.getState().todos);
 });
 
 export default store;
