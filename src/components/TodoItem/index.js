@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { RiDeleteBinLine, RiEditBoxLine } from "react-icons/ri";
+import InputPopup from "../InputPopup";
 
 const TodoItemContainer = styled.li`
   width: 100%;
@@ -53,7 +54,8 @@ const TextWrapper = styled.span`
 `;
 
 const TodoItem = (props) => {
-  const { todo, addTodo, deleteTodo } = props;
+  const { todo, addTodo, deleteTodo, updateTodo } = props;
+  const [open, setOpen] = React.useState(false);
 
   return (
     <TodoItemContainer>
@@ -67,10 +69,16 @@ const TodoItem = (props) => {
           {todo?.text}
         </TextWrapper>
         <ButtonsContainer>
-          <RiEditBoxLine size={"20px"} />
-          <RiDeleteBinLine size={"20px"} onClick={deleteTodo} />
+          <RiEditBoxLine size={"22px"} onClick={() => setOpen(true)} />
+          <RiDeleteBinLine size={"22px"} onClick={deleteTodo} />
         </ButtonsContainer>
       </TodoItemStyle>
+      <InputPopup
+        open={open}
+        setOpen={setOpen}
+        updateTodo={updateTodo}
+        todo={todo}
+      />
     </TodoItemContainer>
   );
 };
