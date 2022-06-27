@@ -1,13 +1,13 @@
 import { createStore } from "redux";
 import rootReducer from "./reducers";
 import { loadLocalStorage, saveLocalStorage } from "../utils/localStorage";
+import { saveTodosInFirebase } from "../firebase/todos";
 
-const todoLocalStorage = loadLocalStorage("todos");
+const store = createStore(rootReducer, loadLocalStorage("todos"));
 
-const store = createStore(rootReducer, todoLocalStorage);
-
-store.subscribe(() => {
+store.subscribe(async () => {
   saveLocalStorage("todos", store.getState().todos);
+  await saveTodosInFirebase(store.getState().todos);
 });
 
 export default store;

@@ -1,15 +1,28 @@
 import { db } from "./";
-import { collection, updateDoc, addDoc } from "firebase/firestore";
+import {
+  collection,
+  updateDoc,
+  addDoc,
+  query,
+  where,
+  getDocs,
+  setDoc,
+} from "firebase/firestore";
+import { signOut, getAuth, onAuthStateChanged, auth } from "firebase/auth";
+import { googleProvider, app } from "./";
+import { getDatabase, ref, child, push, update, set } from "firebase/database";
 
-const updateTodosInUser = async (uid, todos) => {
-  const userDoc = collection(db, "users").doc(uid);
-  await updateDoc(userDoc, { todos });
+const saveTodosInFirebase = async (todos) => {
+  const user = getAuth(app).currentUser;
+  const userId = user.uid;
+  writeTodo(userId, todos);
 };
 
-const loadTodosFromUser = async (uid) => {
-  const userDoc = collection(db, "users").doc(uid);
-  const user = await userDoc.get();
-  return user.data().todos;
-};
+function writeTodo(userId, todos) {
+  const db = getDatabase();
+  set(ref(db, "users/" + userId), {
+    todos,
+  });
+}
 
-export { updateTodosInUser, loadTodosFromUser };
+export { saveTodosInFirebase };
