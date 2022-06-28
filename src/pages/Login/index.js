@@ -9,25 +9,23 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
 import { TextField, Button, Typography } from "@mui/material";
-import SimpleSnackbar from "../../components/SimpleSnackbar";
+import { login } from "../../stores/actions";
+import { useDispatch } from "react-redux";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
-  const [isError, setIsError] = useState({ isError: false, errorMessage: "" });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (user) navigate("/dashboard");
-
-    if (error) {
-      setIsError({
-        isError: true,
-        errorMessage: error.message,
-      });
+    if (user) {
+      console.log("user: ", user);
+      dispatch(login(user));
+      navigate("/dashboard");
     }
-  }, [user, loading, error]);
+  }, [user]);
 
   return (
     <div className="login">
@@ -75,7 +73,6 @@ function Login() {
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
       </div>
-      <SimpleSnackbar open={isError} setOpen={setIsError} />
     </div>
   );
 }

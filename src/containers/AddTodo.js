@@ -64,7 +64,7 @@ const AddTodo = ({ dispatch }) => {
     <AddTodoStyle>
       <form onSubmit={handleSubmitTodo}>
         <input
-          onChange={(event) => setTodoInput(event.target.value)}
+          onChange={(e) => setTodoInput(e.target.value)}
           placeholder="Add a todo"
           value={todoInput}
         />
