@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { routes } from "./routes";
 import "./styles/index.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           ))}
         </Routes>
       </Router>
+      <Toaster position="top-right" />
     </div>
   );
 }
