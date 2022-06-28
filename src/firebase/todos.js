@@ -1,18 +1,14 @@
 import { db } from "./";
 import {
   collection,
-  updateDoc,
-  addDoc,
   query,
   where,
   getDocs,
   setDoc,
   doc,
 } from "firebase/firestore";
-import { signOut, getAuth, onAuthStateChanged, auth } from "firebase/auth";
-import { googleProvider, app } from "./";
-import { getDatabase, ref, child, push, update, set } from "firebase/database";
-import { storage } from "./";
+import { getAuth } from "firebase/auth";
+import { app } from "./";
 
 const saveTodosInFirebase = async (todos) => {
   const user = getAuth(app).currentUser;
