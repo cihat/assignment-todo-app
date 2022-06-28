@@ -15,6 +15,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import styled from "styled-components";
 import { logOut, auth } from "../../firebase/auth";
+import { useDispatch } from "react-redux";
 
 const Title = styled.h1`
   font-weight: bold;
@@ -31,16 +32,10 @@ const ResponsiveAppBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -59,11 +54,10 @@ const ResponsiveAppBar = () => {
   ];
 
   React.useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
+    if (!user) {
+      dispatch({ type: "LOGOUT" });
+      navigate("/");
     }
-    if (!user) navigate("/");
   }, [user, loading]);
 
   return (
