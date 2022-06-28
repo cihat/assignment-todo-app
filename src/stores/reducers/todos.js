@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { loadLocalStorage } from "../../utils/localStorage";
-import { TodosActionTypes as TodoTypes } from "../actions/types";
+import { TodosActionTypes as TodoTypes } from "../types/todos";
 
 const initialState = {
   todos: loadLocalStorage("todos"),

@@ -27,4 +27,19 @@ const deleteTodo = (id) => ({
   id,
 });
 
-export { addTodo, setVisibilityFilter, toggleTodo, updateTodo, deleteTodo };
+const login = (user) => {
+  console.log("user", user);
+  return {
+    type: "LOGIN",
+    user,
+  };
+};
+
+export {
+  addTodo,
+  setVisibilityFilter,
+  toggleTodo,
+  updateTodo,
+  deleteTodo,
+  login,
+};

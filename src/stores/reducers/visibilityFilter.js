@@ -1,4 +1,4 @@
-import { FiltersActionTypes as FilterTypes } from "../actions/types";
+import { FiltersActionTypes as FilterTypes } from "../types/todos";
 
 const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
 
