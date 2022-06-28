@@ -1,6 +1,6 @@
 import React from "react";
 import FilterLink from "../../containers/FilterLink";
-import { FiltersActionTypes as FilterTypes } from "../../stores/actions/types";
+import { FiltersActionTypes as FilterTypes } from "../../stores/types/todos";
 import styled from "styled-components";
 
 const FooterLinkFilterWrapperStyle = styled.div`
